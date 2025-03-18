@@ -1,20 +1,18 @@
 [EXP]
 root = "databases/Hsin-Hua/"
-name = exp_androids_seg
+name = Hsin_Hua
 runs = 1
 epochs = 1
 save = True
 [DATA]
 databases = ['data']
-data = ./data/androids/androids.csv
+data = ./data/Hsin-Hua/Hsin-Hua.csv
 data.type = csv
 data.absolute_path = False
 data.split_strategy = random
-target = depression
-labels = ['depressed', 'control']
-no_reuse = True
-filter = [['task', 'interview']]
-limit_samples = 20
+target = age
+labels = ['young', 'old']
+bins  = [-100000, 40, 100000]
 [SEGMENT]
 target = _segmented
 method = silero
