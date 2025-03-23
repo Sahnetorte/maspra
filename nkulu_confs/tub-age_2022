@@ -1,1 +1,30 @@
-
+[EXP]
+root = ./results/
+name = tub-age_2022
+runs = 1
+epochs = 50
+save = True
+type = regression
+[DATA]
+databases = ['data']
+data = ./databases/tub-age_2022
+data.test_size = 30
+target = age
+labels = ['child', 'young', 'adult', 'senior']
+bins  = [-100000, 20, 40, 50, 100000]
+[FEATS]
+type = ['agender']
+#type = ['praat']
+scale = standard
+[MODEL]
+#type = xgr
+type = mlp_reg
+layers = {'l1':120, 'l2':84}
+save = True
+measure = ccc
+loss = 1-ccc 
+[EXPL]
+scatter = ['pca']
+[PLOT]
+best_model = True
+epoch_progression = True
